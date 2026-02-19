@@ -40,6 +40,10 @@ function App() {
     setAnalysisResult(result);
   }, []);
 
+  const handleBlockSizeDetected = useCallback((size: number) => {
+    setBlockSize(size);
+  }, []);
+
   const handleHoverColor = useCallback((hex: string | null) => {
     setHighlightedColor(hex);
   }, []);
@@ -110,6 +114,7 @@ function App() {
                 imageUrl={imageUrl}
                 blockSize={blockSize}
                 onAnalysis={handleAnalysis}
+                onBlockSizeDetected={handleBlockSizeDetected}
                 highlightedColor={highlightedColor}
               />
             </div>
